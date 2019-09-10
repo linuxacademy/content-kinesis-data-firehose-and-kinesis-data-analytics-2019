@@ -37,8 +37,8 @@ while True:
     if record['favoritecaptain'] == "Jean-Luc Picard":
         record['rating'] = random.randint(5, 10);
     elif record['favoritecaptain'] == "James T. Kirk":
-        record['rating'] = random.randint(3, 10):
-    else: 
+        record['rating'] = random.randint(3, 10);
+    else:
         record['rating'] = random.randint(1, 10);
     record['timestamp'] = time.time();
     response = client.put_record(
