@@ -34,17 +34,12 @@ record = {}
 while True:
 
     record['user'] = fake.name();
-    if random.randint(1,100) == 100:
-        record['favoritecaptain'] == "Dex";
+    if random.randint(1,100) < 5:
+        record['favoritecaptain'] = "Dex";
         record['rating'] = random.randint(6000,9000);
     else:
         record['favoritecaptain'] = random.choice(captains);
-        if record['favoritecaptain'] == "Jean-Luc Picard":
-            record['rating'] = random.randint(900, 1000);
-        elif record['favoritecaptain'] == "James T. Kirk":
-            record['rating'] = random.randint(300, 1000);
-        else:
-            record['rating'] = random.randint(1, 1000);
+        record['rating'] = random.randint(1, 1000);
     record['timestamp'] = time.time();
     response = client.put_record(
         DeliveryStreamName=DeliveryStreamName,
